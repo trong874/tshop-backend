@@ -1,0 +1,123 @@
+
+div.orgChart {
+    margin: 10px;
+    padding: 20px;
+}
+
+div.orgChart h2 {
+    margin: 0;
+    font-size: 16px;
+    min-height: 20px;
+    line-height: 2;
+}
+
+div.orgChart ul {
+    list-style: none;
+    margin: 4px;
+    padding: 0px;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+div.orgChart ul.stack,
+div.orgChart ul.stack ul {
+    text-align: center;
+}
+
+div.orgChart table {
+    width: 100%;
+}
+
+div.orgChart tr.lines td.line {
+    width: 1px;
+    height: 20px;
+}
+
+div.orgChart tr.lines td.top {
+    border-top: 1px dashed var(--bs-gray-400);
+}
+
+div.orgChart tr.lines td.left {
+    border-right: 1px dashed var(--bs-gray-400);
+}
+
+div.orgChart tr.lines td.right {
+    border-left: 0px dashed var(--bs-gray-400);
+}
+
+div.orgChart tr.lines td.half {
+    width: 50%;
+}
+
+div.orgChart td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0px 2px;
+}
+
+div.orgChart div.node {
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+    padding: 12px;
+    min-width: 120px;
+    min-height: 48px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #fbfbfb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #fbfbfb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #fbfbfb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%, #fbfbfb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%, #fbfbfb 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%, #fbfbfb 100%); /* W3C */
+    line-height: 1.3em;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    position: relative;
+    box-shadow: 1px 1px 0px #ddd;
+    transition: .3s;
+    cursor: pointer;
+}
+.org-add-button,
+.org-del-button,
+.org-confirm-del-button {
+    position: absolute;
+    font-size: 12px;
+}
+
+.org-add-button,
+.org-del-button {
+    background-color: #eef;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    right: -20px;
+    display: none;
+}
+.node:hover .org-add-button,
+.node:hover .org-del-button {
+    display: block;
+}
+.node:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    right: -20px;
+    top: 0;
+}
+.org-del-button {
+    top: 18px;
+}
+
+.org-add-button {
+    top: 0;
+}
+
+.org-input {
+    width: 100px;
+}
+
+.org-confirm-del-button {
+    display: none;
+}
