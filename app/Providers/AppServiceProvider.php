@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Repositories\Interfaces\CategoryInterface;
+use App\Repositories\Products\CategoryRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(CategoryInterface::class, function () {
+            return new CategoryRepository(new Category());
+        });
     }
 }

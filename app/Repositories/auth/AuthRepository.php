@@ -9,8 +9,7 @@ class AuthRepository
     private const IS_ADMIN = '1';
     public function login($credentials,$remember): bool
     {
-        $credentials['account_type'] = self::IS_ADMIN; //phải là admin mới được vào
-
+        $credentials['account_type'] = self::IS_ADMIN;
         return Auth::attempt($credentials,$remember);
     }
 }

@@ -1,15 +1,14 @@
 $(document).ready(function () {
     const csrf_token = $('meta[name="csrf-token"]').attr('content');
-    let rootNode =  {id: 0, name: 'Các sản phẩm', parent_id: -1}
 
     let chart;
+    
     $.ajax({
         url:'/get-categories',
         type:'GET',
         success: res => {
-            if (res.status === 1) {
+            if (!res.error) {
                 let data = res.data;
-                data[0] = rootNode;
                 chart = $('#chart').orgChart({
                     data: data,
                     showControls: true,
@@ -35,7 +34,7 @@ $(document).ready(function () {
                 _token: csrf_token,
             },
             success: res => {
-                if (res.status === 1) {
+                if (!res.error) {
                     chart.deleteNode(id);
                     toastr.success(res.message);
                 }
@@ -48,8 +47,7 @@ $(document).ready(function () {
             return;
         }
         let data = chart.getData();
-        data.shift()//Xoá phần từ đầu tiên (rootNode);
-        console.log(data)
+        data.shift() //Xoá phần từ đầu tiên (rootNode);
         $.ajax({
             url:'/categories/',
             type:'POST',
@@ -58,7 +56,9 @@ $(document).ready(function () {
                 data: data,
             },
             success: res => {
-                console.log(res)
+                if(!res.error) {
+                    toastr.success(res.message);
+                }
             }
         })
     })
@@ -83,7 +83,9 @@ $(document).ready(function () {
             type:'POST',
             data: dataForm,
             success: res => {
-                console.log(res);
+                if(!res.error) {
+                    toastr.success(res.message);
+                }
             }
         })
     })

@@ -166,7 +166,6 @@ return [
          * Package Service Providers...
          */
         App\Providers\SkoteServerProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         /*
@@ -236,10 +235,6 @@ return [
 
         'Menu' => App\Classes\Theme\Menu::class,
         'Skote' => App\Classes\Theme\Skote::class,
-
-        //JWT Alias
-        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

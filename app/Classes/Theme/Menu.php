@@ -96,10 +96,6 @@ class Menu
     // Check for active Vertical Menu item
     public static function isActiveVerMenuItem($item, $page, $rec = 0): bool
     {
-        if (@$item['redirect'] === true) {
-            return false;
-        }
-
         self::checkRecursion($rec);
 
         if (isset($item['pages']) && $item['pages'] == $page) {

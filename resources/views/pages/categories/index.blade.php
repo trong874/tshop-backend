@@ -25,6 +25,7 @@
                     <form class="custom-validation create-update-category" action="{{ route('categories.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="id">
+                        <input type="hidden" name="parent_id">
                         <div class="outer">
                             <div class="mb-2">
                                 <label>Tên danh mục :</label>
